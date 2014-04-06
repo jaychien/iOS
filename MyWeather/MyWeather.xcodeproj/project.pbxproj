@@ -15,13 +15,16 @@
 		6961820718F18FC900BB5FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961820618F18FC900BB5FA6 /* AppDelegate.m */; };
 		6961820A18F18FC900BB5FA6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6961820818F18FC900BB5FA6 /* Main_iPhone.storyboard */; };
 		6961820D18F18FC900BB5FA6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6961820B18F18FC900BB5FA6 /* Main_iPad.storyboard */; };
-		6961821018F18FC900BB5FA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961820F18F18FC900BB5FA6 /* ViewController.m */; };
 		6961821218F18FC900BB5FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6961821118F18FC900BB5FA6 /* Images.xcassets */; };
 		6961821918F18FC900BB5FA6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6961821818F18FC900BB5FA6 /* XCTest.framework */; };
 		6961821A18F18FC900BB5FA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696181F618F18FC900BB5FA6 /* Foundation.framework */; };
 		6961821B18F18FC900BB5FA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696181FA18F18FC900BB5FA6 /* UIKit.framework */; };
 		6961822318F18FC900BB5FA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6961822118F18FC900BB5FA6 /* InfoPlist.strings */; };
 		6961822518F18FC900BB5FA6 /* MyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961822418F18FC900BB5FA6 /* MyWeatherTests.m */; };
+		6961822F18F190BD00BB5FA6 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6961822E18F190BD00BB5FA6 /* readme.txt */; };
+		6961823218F1954500BB5FA6 /* LocationTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823118F1954500BB5FA6 /* LocationTVC.m */; };
+		6961823518F1957400BB5FA6 /* LocationDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823418F1957400BB5FA6 /* LocationDetailVC.m */; };
+		6961823918F1961E00BB5FA6 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823818F1961E00BB5FA6 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +50,19 @@
 		6961820618F18FC900BB5FA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6961820918F18FC900BB5FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		6961820C18F18FC900BB5FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		6961820E18F18FC900BB5FA6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6961820F18F18FC900BB5FA6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6961821118F18FC900BB5FA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6961821718F18FC900BB5FA6 /* MyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6961821818F18FC900BB5FA6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6961822018F18FC900BB5FA6 /* MyWeatherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyWeatherTests-Info.plist"; sourceTree = "<group>"; };
 		6961822218F18FC900BB5FA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6961822418F18FC900BB5FA6 /* MyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWeatherTests.m; sourceTree = "<group>"; };
+		6961822E18F190BD00BB5FA6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		6961823018F1954500BB5FA6 /* LocationTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTVC.h; sourceTree = "<group>"; };
+		6961823118F1954500BB5FA6 /* LocationTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTVC.m; sourceTree = "<group>"; };
+		6961823318F1957400BB5FA6 /* LocationDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailVC.h; sourceTree = "<group>"; };
+		6961823418F1957400BB5FA6 /* LocationDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailVC.m; sourceTree = "<group>"; };
+		6961823718F1961E00BB5FA6 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		6961823818F1961E00BB5FA6 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		696181EA18F18FC900BB5FA6 = {
 			isa = PBXGroup;
 			children = (
+				6961822E18F190BD00BB5FA6 /* readme.txt */,
 				696181FC18F18FC900BB5FA6 /* MyWeather */,
 				6961821E18F18FC900BB5FA6 /* MyWeatherTests */,
 				696181F518F18FC900BB5FA6 /* Frameworks */,
@@ -114,12 +123,10 @@
 		696181FC18F18FC900BB5FA6 /* MyWeather */ = {
 			isa = PBXGroup;
 			children = (
-				6961820518F18FC900BB5FA6 /* AppDelegate.h */,
-				6961820618F18FC900BB5FA6 /* AppDelegate.m */,
 				6961820818F18FC900BB5FA6 /* Main_iPhone.storyboard */,
 				6961820B18F18FC900BB5FA6 /* Main_iPad.storyboard */,
-				6961820E18F18FC900BB5FA6 /* ViewController.h */,
-				6961820F18F18FC900BB5FA6 /* ViewController.m */,
+				6961823618F1958C00BB5FA6 /* Controller */,
+				6961823A18F1962900BB5FA6 /* Model */,
 				6961821118F18FC900BB5FA6 /* Images.xcassets */,
 				696181FD18F18FC900BB5FA6 /* Supporting Files */,
 			);
@@ -129,6 +136,8 @@
 		696181FD18F18FC900BB5FA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6961820518F18FC900BB5FA6 /* AppDelegate.h */,
+				6961820618F18FC900BB5FA6 /* AppDelegate.m */,
 				696181FE18F18FC900BB5FA6 /* MyWeather-Info.plist */,
 				696181FF18F18FC900BB5FA6 /* InfoPlist.strings */,
 				6961820218F18FC900BB5FA6 /* main.m */,
@@ -153,6 +162,27 @@
 				6961822118F18FC900BB5FA6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6961823618F1958C00BB5FA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6961823018F1954500BB5FA6 /* LocationTVC.h */,
+				6961823118F1954500BB5FA6 /* LocationTVC.m */,
+				6961823318F1957400BB5FA6 /* LocationDetailVC.h */,
+				6961823418F1957400BB5FA6 /* LocationDetailVC.m */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6961823A18F1962900BB5FA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6961823718F1961E00BB5FA6 /* Location.h */,
+				6961823818F1961E00BB5FA6 /* Location.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6961822F18F190BD00BB5FA6 /* readme.txt in Resources */,
 				6961820D18F18FC900BB5FA6 /* Main_iPad.storyboard in Resources */,
 				6961821218F18FC900BB5FA6 /* Images.xcassets in Resources */,
 				6961820A18F18FC900BB5FA6 /* Main_iPhone.storyboard in Resources */,
@@ -253,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6961821018F18FC900BB5FA6 /* ViewController.m in Sources */,
 				6961820718F18FC900BB5FA6 /* AppDelegate.m in Sources */,
+				6961823918F1961E00BB5FA6 /* Location.m in Sources */,
+				6961823218F1954500BB5FA6 /* LocationTVC.m in Sources */,
 				6961820318F18FC900BB5FA6 /* main.m in Sources */,
+				6961823518F1957400BB5FA6 /* LocationDetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
