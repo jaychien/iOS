@@ -25,6 +25,8 @@
 		6961823218F1954500BB5FA6 /* LocationTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823118F1954500BB5FA6 /* LocationTVC.m */; };
 		6961823518F1957400BB5FA6 /* LocationDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823418F1957400BB5FA6 /* LocationDetailVC.m */; };
 		6961823918F1961E00BB5FA6 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6961823818F1961E00BB5FA6 /* Location.m */; };
+		69B9380718F8E7B40000E6BD /* WeatherParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B9380618F8E7B40000E6BD /* WeatherParseOperation.m */; };
+		69B9380A18F8E9200000E6BD /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B9380918F8E9200000E6BD /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		6961823418F1957400BB5FA6 /* LocationDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailVC.m; sourceTree = "<group>"; };
 		6961823718F1961E00BB5FA6 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		6961823818F1961E00BB5FA6 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		69B9380518F8E7B40000E6BD /* WeatherParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherParseOperation.h; sourceTree = "<group>"; };
+		69B9380618F8E7B40000E6BD /* WeatherParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherParseOperation.m; sourceTree = "<group>"; };
+		69B9380818F8E9200000E6BD /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		69B9380918F8E9200000E6BD /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,10 @@
 			children = (
 				6961823718F1961E00BB5FA6 /* Location.h */,
 				6961823818F1961E00BB5FA6 /* Location.m */,
+				69B9380818F8E9200000E6BD /* Weather.h */,
+				69B9380918F8E9200000E6BD /* Weather.m */,
+				69B9380518F8E7B40000E6BD /* WeatherParseOperation.h */,
+				69B9380618F8E7B40000E6BD /* WeatherParseOperation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			files = (
 				6961820718F18FC900BB5FA6 /* AppDelegate.m in Sources */,
 				6961823918F1961E00BB5FA6 /* Location.m in Sources */,
+				69B9380A18F8E9200000E6BD /* Weather.m in Sources */,
+				69B9380718F8E7B40000E6BD /* WeatherParseOperation.m in Sources */,
 				6961823218F1954500BB5FA6 /* LocationTVC.m in Sources */,
 				6961820318F18FC900BB5FA6 /* main.m in Sources */,
 				6961823518F1957400BB5FA6 /* LocationDetailVC.m in Sources */,
@@ -503,6 +515,7 @@
 				6961822A18F18FC900BB5FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6961822B18F18FC900BB5FA6 /* Build configuration list for PBXNativeTarget "MyWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +524,7 @@
 				6961822D18F18FC900BB5FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

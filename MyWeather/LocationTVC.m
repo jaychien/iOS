@@ -7,51 +7,76 @@
 //
 
 #import "LocationTVC.h"
+#import "WeatherParseOperation.h"
 
 @interface LocationTVC ()
+@property (nonatomic) NSOperationQueue *parseQueue;
 
 @end
 
 @implementation LocationTVC
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self fetchWeatherResult];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+-(NSOperationQueue*) parseQueue
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (_parseQueue  == nil)
+        _parseQueue = [[NSOperationQueue alloc]init];
+    
+    return _parseQueue;
+}
+
+
+-(IBAction)fetchWeatherResult
+{
+    dispatch_queue_t opQueue = dispatch_queue_create("Fetch weather", NULL);
+    
+    dispatch_async(opQueue, ^{
+        
+        static NSString* InfoURL = @"http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-001.xml";
+        
+        NSURL *url = [NSURL URLWithString:InfoURL];
+        
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.refreshControl endRefreshing];
+            
+            if (data == nil) {
+                // Todo: handle error
+                //
+                
+            } else {
+                
+                WeatherParseOperation *operation = [[WeatherParseOperation alloc]initWithData:data];
+                [self.parseQueue addOperation:operation];
+            }
+        });
+    });
+
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
