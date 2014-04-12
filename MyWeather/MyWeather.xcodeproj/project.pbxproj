@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690C78FD18F980490024FCE6 /* WeatherCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCommon.h; sourceTree = "<group>"; };
 		696181F318F18FC900BB5FA6 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696181F618F18FC900BB5FA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		696181F818F18FC900BB5FA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,6 +186,7 @@
 		6961823A18F1962900BB5FA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				690C78FD18F980490024FCE6 /* WeatherCommon.h */,
 				6961823718F1961E00BB5FA6 /* Location.h */,
 				6961823818F1961E00BB5FA6 /* Location.m */,
 				69B9380818F8E9200000E6BD /* Weather.h */,

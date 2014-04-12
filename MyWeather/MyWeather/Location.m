@@ -10,4 +10,12 @@
 
 @implementation Location
 
+-(Weather*) FindWeatherWithForecastStartTime: (NSDate*)startTime
+                                  andEndTime: (NSDate*)endTime
+                                 isCreateNew:(BOOL)bNewOne
+{
+    return nil;
+}
+
+
 @end

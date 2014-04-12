@@ -8,6 +8,7 @@
 
 #import "WeatherParseOperation.h"
 #import "Location.h"
+#import "WeatherCommon.h"
 
 @interface WeatherParseOperation() <NSXMLParserDelegate>
 
@@ -58,8 +59,25 @@
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.parseData];
     [parser setDelegate:self];
-    [parser parse];
+    
+    
+    if ([parser parse] == YES) {
+        
+        [self performSelectorOnMainThread:@selector(parseDataComplete:)
+                               withObject:self.arrLocation
+                            waitUntilDone:YES];
+        
+    }
+    
 
+}
+
+
+-(void)parseDataComplete:(NSArray*) arrLocation
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:weatherResultNotificationName
+                                                        object:self
+                                                      userInfo:@{weatherResultKey: arrLocation}];
 }
 
 #pragma mark - Parser constants: XML element
@@ -88,7 +106,7 @@ static NSString * const NameElementName = @"name";
     
     if ([elementName isEqualToString:NameElementName]){
         
-        self.currentLocation.Name = self.currentParsedCharacterData;
+        self.currentLocation.Name = [self.currentParsedCharacterData copy];
         
         [self.arrLocation addObject:self.currentLocation];
         

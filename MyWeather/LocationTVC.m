@@ -8,9 +8,13 @@
 
 #import "LocationTVC.h"
 #import "WeatherParseOperation.h"
+#import "WeatherCommon.h"
+#import "Location.h"
 
 @interface LocationTVC ()
 @property (nonatomic) NSOperationQueue *parseQueue;
+
+@property(nonatomic, strong)NSMutableArray *arrLocation;
 
 @end
 
@@ -23,6 +27,11 @@
     
     [self fetchWeatherResult];
     
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                             selector:@selector(onWeatherResult:)
+                                                 name:weatherResultNotificationName
+                                               object:nil];
 }
 
 -(NSOperationQueue*) parseQueue
@@ -61,9 +70,20 @@
             }
         });
     });
-
     
 }
+     
+- (void)onWeatherResult:(NSNotification *)notify
+{
+    assert([NSThread isMainThread]);
+    
+    self.arrLocation = [[notify userInfo]valueForKey:weatherResultKey];
+    
+    NSLog(@"location count = %lu", [self.arrLocation count]);
+
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - Table view data source
 
@@ -71,26 +91,26 @@
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.arrLocation count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Location *location = self.arrLocation[indexPath.row];
+    
+    cell.textLabel.text = location.Name;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
