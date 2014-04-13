@@ -9,6 +9,14 @@
 #import "LocationDetailVC.h"
 
 @interface LocationDetailVC ()
+@property (weak, nonatomic) IBOutlet UILabel *labelForcastStartTime;
+@property (weak, nonatomic) IBOutlet UILabel *labelForcastEndTime;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
+@property (weak, nonatomic) IBOutlet UILabel *labelMaxT;
+@property (weak, nonatomic) IBOutlet UILabel *labelMinT;
+
+@property(strong, nonatomic)NSDateFormatter *dateTimeFormater;
+
 
 @end
 
@@ -17,9 +25,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self updateUI];
 }
 
+
+-(void)setLocation:(Location *)location
+{
+    _location = location;
+    
+    [self updateUI];
+}
+
+-(NSDateFormatter*)dateTimeFormater
+{
+    if (_dateTimeFormater == nil) {
+        
+        _dateTimeFormater = [[NSDateFormatter alloc]init];
+        [_dateTimeFormater setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:8]];
+        
+        // 2014-04-06T18:00:00+08:00
+        //
+        [_dateTimeFormater setDateFormat:@"yyyy'-'MM'-'dd HH':'mm':'ss"];
+    }
+    
+    return _dateTimeFormater;
+}
+
+
+-(void)updateUI
+{
+    Weather *weather = [self.location.arrWeather firstObject];
+    
+    self.labelForcastStartTime.text = [self.dateTimeFormater stringFromDate: weather.ForecastStartTime];
+    self.labelForcastEndTime.text = [self.dateTimeFormater stringFromDate: weather.ForecastEndTime];
+    
+    self.labelStatus.text = weather.Status;
+    self.labelMaxT.text = [NSString stringWithFormat:@"%@度",weather.maxT];
+    self.labelMinT.text = [NSString stringWithFormat:@"%@度",weather.minT];
+}
 
 /*
 #pragma mark - Navigation

@@ -10,6 +10,7 @@
 #import "WeatherParseOperation.h"
 #import "WeatherCommon.h"
 #import "Location.h"
+#import "LocationDetailVC.h"
 
 @interface LocationTVC ()
 @property (nonatomic) NSOperationQueue *parseQueue;
@@ -24,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"台灣天氣";
     
     [self fetchWeatherResult];
     
@@ -110,11 +113,34 @@
     cell.textLabel.text = location.Name;
     
     Weather *weather = [location.arrWeather firstObject];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (最高溫=%@度, 最低溫=%@度)",
-                                 weather.Status, weather.maxT, weather.minT];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", weather.Status];
+    
+    
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (最高溫=%@度, 最低溫=%@度)",
+      //                           weather.Status, weather.maxT, weather.minT];
+    
     
     
     return cell;
+}
+
+#pragma mark - Navigation
+ 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    if ([[segue destinationViewController] isKindOfClass:[LocationDetailVC class]])
+    {
+        Location *location = self.arrLocation[indexPath.row];
+        
+        LocationDetailVC *detailVC = [segue destinationViewController];
+        
+        detailVC.title = location.Name;
+        detailVC.location = location;
+        
+    }
 }
 
 
@@ -156,15 +182,5 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
