@@ -59,14 +59,15 @@
             
             [self.refreshControl endRefreshing];
             
-            if (data == nil) {
+            if (data != nil) {
+                WeatherParseOperation *operation = [[WeatherParseOperation alloc]initWithData:data];
+                [self.parseQueue addOperation:operation];
+                
+                
+            } else {
                 // Todo: handle error
                 //
                 
-            } else {
-                
-                WeatherParseOperation *operation = [[WeatherParseOperation alloc]initWithData:data];
-                [self.parseQueue addOperation:operation];
             }
         });
     });
@@ -107,6 +108,11 @@
     Location *location = self.arrLocation[indexPath.row];
     
     cell.textLabel.text = location.Name;
+    
+    Weather *weather = [location.arrWeather firstObject];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (最高溫=%@度, 最低溫=%@度)",
+                                 weather.Status, weather.maxT, weather.minT];
+    
     
     return cell;
 }
